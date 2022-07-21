@@ -16,8 +16,10 @@ public class App {
 
         // fazer uma conexão HTTP e buscar os top 250 filmes
 
-        var key = "k_fjtlk5gc";
-        String url = "https://imdb-api.com/en/API/Top250Movies/" + key;
+        // var key = "k_fjtlk5gc";
+        // String url = "https://imdb-api.com/en/API/Top250Movies/" + key;
+
+        String url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&start_date=2022-06-12&end_date=2022-06-14";
         URI endereco = URI.create(url);
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder(endereco).GET().build();
@@ -35,11 +37,12 @@ public class App {
        
         var geradora = new GeradoraDeFigurinhas();
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 3; i++) {
 
             Map<String, String> filme = listaDeFilmes.get(i);
 
-            String urlImagem = filme.get("image")
+            String urlImagem = // filme.get("image")
+                filme.get("url")
                 .replaceAll("(@+)(.*).jpg$", "$1.jpg");
 
             String titulo = filme.get("title");
