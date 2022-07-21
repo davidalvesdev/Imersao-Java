@@ -34,18 +34,23 @@ public class App {
         // exibir e manipular os dados
        
         var geradora = new GeradoraDeFigurinhas();
-        for (Map<String, String> filme : listaDeFilmes) {
 
-            String urlImagem = filme.get("image");
+        for (int i = 0; i < 10; i++) {
+
+            Map<String, String> filme = listaDeFilmes.get(i);
+
+            String urlImagem = filme.get("image")
+                .replaceAll("(@+)(.*).jpg$", "$1.jpg");
+
             String titulo = filme.get("title");
 
             InputStream inputStream = new URL(urlImagem).openStream();
-            String nomeArquivo = titulo + ".png";
+            String nomeArquivo = "saida/" + titulo + ".png";
 
             geradora.cria(inputStream, nomeArquivo);
  
 
-            System.out.println(filme.get("title"));
+            System.out.println(filme.get(titulo));
             System.out.println();
 
         }
