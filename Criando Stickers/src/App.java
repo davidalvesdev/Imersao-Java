@@ -10,13 +10,16 @@ public class App {
 
         // fazer uma conexão HTTP e buscar os top 250 filmes
 
-        var key = "k_fjtlk5gc";
-        String url = "https://imdb-api.com/en/API/Top250Movies/" + key;
-        ExtratoDeConteudo extrator = new ExtratorDoConteudoIMDB();
+        //var key = "k_fjtlk5gc";
+        //String url = "https://imdb-api.com/en/API/Top250Movies/" + key;
+        //ExtratoDeConteudo extrator = new ExtratorDoConteudoIMDB();
 
 
         //String url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&start_date=2022-06-12&end_date=2022-06-14";
         //ExtratorDeConteudo extrator = new ExtratorDeConteudoDaNasa();
+
+        String url = "http://localhost:8080/linguagens";
+        ExtratoDeConteudo extrator = new ExtratorDoConteudoIMDB();
 
         var http = new ClienteHttp();
         String json = http.buscaDados(url);

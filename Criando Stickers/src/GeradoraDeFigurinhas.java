@@ -37,13 +37,13 @@ public class GeradoraDeFigurinhas {
 
         // configurar a fonte 
 
-        var fonte = new FontUIResource(Font.SANS_SERIF, Font.BOLD, 84);
+        var fonte = new FontUIResource(Font.SANS_SERIF, Font.BOLD, 30);
         graphics.setColor(Color.PINK);
         graphics.setFont(fonte);
 
         //escrever uma frase na nova imagem 
 
-        graphics.drawString("TOPZERA", 100, novaAltura - 100);
+        graphics.drawString("TOPZERA", 0, novaAltura - 0);
 
         // escrever a nova imagem em um arquivo
         ImageIO.write(novaImagem, "png", new File(nomeArquivo));
