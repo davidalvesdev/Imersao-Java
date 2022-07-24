@@ -1,5 +1,7 @@
 package br.com.david.linguagens.api;
 
+@Document()
+
 public class Linguagem {
     
 
